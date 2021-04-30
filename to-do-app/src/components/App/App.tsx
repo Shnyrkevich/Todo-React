@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../header/header';
+import Sidebar from '../sidebar/sidebar';
 import TodosContainer from '../todo-list/todos-container';
-import './App.css';
+import { AppContainer } from './styled-app';
 
 export default function App() {
   return (
-    <div className="App">
-      <Header />
+    <AppContainer>
+      <Sidebar />
       <TodosContainer />
-    </div>
+    </AppContainer>
   );
 }
