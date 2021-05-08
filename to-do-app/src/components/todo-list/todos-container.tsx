@@ -1,26 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { StyledTodosContainer } from './styled-todos';
 import Todo from './todo/todo';
-import { db } from '../../firebase';
+import { getCollection } from '../../api/api';
 
 export default function TodosContainer() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    db.collection('todos')
-    .get()
-    .then((docs: any) => {
-      const todos = docs.docs.map((doc: any) => {
-        return {
-          id: doc.id,
-          ...doc.data(),
-        }
-      });
-      setTodos(todos);
-    })
-    .catch((er) => {
-      console.log(er);
-    });
+    getCollection('todos').then((todos: any) => setTodos(todos));
   }, []);
   
 

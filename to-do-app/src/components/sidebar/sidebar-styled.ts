@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 
 export const StyledSidebar = styled.section`
-  width: 20%;
+  min-width: 20%;
   height: 100vh;
-  background-color: #99CCFF;
   display: flex;
   flex-direction: column;
   justefy-content: center;
   align-items: center;
+  border-right: 1px solid lightgray;
 `;
 
 export const SidebarHeader = styled.div`
@@ -33,4 +33,16 @@ export const SidebarHeader = styled.div`
     height: 30px;
     margin: auto 10px auto 10px;
   }
+`;
+
+export const NavigationDivider = styled.span`
+  margin: 10px 0 10px 0;
+  width: 100%;
+  height: 1px;
+  background-color: lightgray;
+`;
+
+export const ListsNavigation = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledTodosContainer = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justefy-content: center;
