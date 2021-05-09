@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const StyledSidebar = styled.section`
   min-width: 20%;
   height: 100vh;
@@ -36,13 +35,7 @@ export const SidebarHeader = styled.div`
 `;
 
 export const NavigationDivider = styled.span`
-  margin: 10px 0 10px 0;
   width: 100%;
   height: 1px;
   background-color: lightgray;
-`;
-
-export const ListsNavigation = styled.div`
-  display: flex;
-  flex-direction: column;
 `;

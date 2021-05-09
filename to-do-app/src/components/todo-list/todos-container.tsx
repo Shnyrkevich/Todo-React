@@ -1,15 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StyledTodosContainer } from './styled-todos';
 import Todo from './todo/todo';
+
+import DBContext from '../../context/db';
+import { RouteComponentProps } from 'react-router';
 import { getCollection } from '../../api/api';
 
-export default function TodosContainer() {
+interface MatchParams {
+  listId: string
+}
+
+interface Props extends RouteComponentProps<MatchParams> {
+}
+
+export default function TodosContainer({ match }: Props) {
+  console.log(match)
   const [todos, setTodos] = useState([]);
+  const db = useContext(DBContext);
 
   useEffect(() => {
-    getCollection('todos').then((todos: any) => setTodos(todos));
-  }, []);
-  
+    getCollection('todos', match.params.listId).then((todos: any) => setTodos(todos));
+    console.log(todos);
+  }, [db, match.params.listId]);
 
   return (
     <StyledTodosContainer>

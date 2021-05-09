@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-export const NavigationContainer = styled.div`
-  margin-top: 20px;
+export const NavigationList = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -9,7 +10,7 @@ export const NavigationContainer = styled.div`
   a {
     color: black;
     margin-top: 10px;
-    margin-botton: 10px;
+    margin-bottom: 10px;
     display: flex;
     justefy-content: center;
     align-items: center;
